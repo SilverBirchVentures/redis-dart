@@ -98,7 +98,7 @@ Future test_pubsub() {
   }).then((_) {
     var expect = [["message", "monkey", "banana"],["message", "monkey", "peanut"]];
     return  _test_rec_msg(pubsubstream,expect)
-    .then((bool r){
+    .then((r){
        if(r != true)
          throw "errror test_pubsub2";
     });

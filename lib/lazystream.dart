@@ -79,7 +79,7 @@ class LazyStreamFast implements LazyStream {
   LazyStreamFast.fromstream(this._stream){
     _return = new List();
     _queue = new Queue();
-    _sub = _stream.listen((List data){
+    _sub = _stream.listen((dynamic data){
       if(data.length == 0)
         return;
       if(_queue.isEmpty){
@@ -186,7 +186,7 @@ class LazyStreamFast implements LazyStream {
     }
   }
   
-  Future<List> take_while(Function f){
+  Future<List> take_while(f){
      return take_while_helper(f);
   }
 }

@@ -22,12 +22,12 @@ class RedisBulk{
 
 
 class RedisSerialise {
-  static final  _dollar = ASCII.encode("\$");
-  static final  _star = ASCII.encode("\*");
-  static final  _semicol  = ASCII.encode(":");
-  static final _linesep = ASCII.encode("\r\n");
-  static final _dollarminus1 = ASCII.encode("\$-1");
-  static final List _ints = new List.generate(20,(i)=>ASCII.encode(i.toString()),growable:false);
+  static final  _dollar = ascii.encode("\$");
+  static final  _star = ascii.encode("\*");
+  static final  _semicol  = ascii.encode(":");
+  static final _linesep = ascii.encode("\r\n");
+  static final _dollarminus1 = ascii.encode("\$-1");
+  static final List _ints = new List.generate(20,(i)=>ascii.encode(i.toString()),growable:false);
 
       
   static List<int> Serialise(object){
@@ -40,7 +40,7 @@ class RedisSerialise {
   
   static void SerialiseConsumable(object,Function consumer(Iterable s)){
      if(object is String){
-       var data = UTF8.encode(object);
+       var data = utf8.encode(object);
        consumer(_dollar);
        consumer(_IntToRaw(data.length));
        consumer(_linesep); 
@@ -76,6 +76,6 @@ class RedisSerialise {
   static Iterable<int> _IntToRaw(int n){
     //if(i>=0 && i < _ints.length)
     //   return _ints[i];
-    return ASCII.encode(n.toString());
+    return ascii.encode(n.toString());
   }
 }

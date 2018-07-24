@@ -10,7 +10,7 @@ class Subscription{
   Trie _trie = new Trie();
   //backward compatibility - deprecated
   StreamSubscription add(String pattern,Function f){
-    return _trie.get(pattern).listen((List d){
+    return _trie.get(pattern).listen((dynamic d){
       int l = d.length;
       f(d[l-2],d[l-1]);
     });
