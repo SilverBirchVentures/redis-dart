@@ -83,7 +83,7 @@ class RedisParser{
   
   static Future<String> parseSimpleString(LazyStream s){
     return read_simple(s).then((v) {
-      List<int> units = v;
+      List<int> units = new List<int>.from(v);
       return utf8.decode(units);
     });
   }
