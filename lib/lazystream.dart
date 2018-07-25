@@ -26,7 +26,7 @@ class LazyStream{
     ..pause();
   }
   
-  Future<List> take_n(int n){
+  Future<dynamic> take_n(int n){
     assert(n>=0);
     List r=[];
     if(n==0) return new Future.value(r);
@@ -123,7 +123,7 @@ class LazyStreamFast implements LazyStream {
     return n;
   }
   
-  Future<List<dynamic>> take_n_helper(int n){
+  Future<dynamic> take_n_helper(int n){
     int remains =  take_n_now(n);
     if(remains==0){
       var ret = new Future.value(_return);
@@ -140,7 +140,7 @@ class LazyStreamFast implements LazyStream {
     }
   }
   
-  Future<List<dynamic>> take_n(int n){
+  Future<dynamic> take_n(int n){
      return take_n_helper(n);
   }
   
