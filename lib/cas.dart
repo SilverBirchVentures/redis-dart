@@ -23,18 +23,18 @@ class Cas{
   /// function that is executed  
   /// during CAS opertion  
   /// 
-  Future watch(List<String> watching_keys, var func){
-     //return _cmd.send_object(["TRANS"]);
-    List<String> watchcmd = ["WATCH"];
-    watchcmd.addAll(watching_keys);
-    return Future.doWhile((){
-      _completer_bool = new Completer();
-      _cmd.send_object(watchcmd).then((_){
-        func();
-      });
-      return _completer_bool.future;
-    });
-  }
+//  Future watch(List<String> watching_keys, var func){
+//     //return _cmd.send_object(["TRANS"]);
+//    List<String> watchcmd = ["WATCH"];
+//    watchcmd.addAll(watching_keys);
+//    return Future.doWhile((){
+//      _completer_bool = new Completer();
+//      _cmd.send_object(watchcmd).then((_){
+//        func();
+//      });
+//      return _completer_bool.future;
+//    });
+//  }
   
   /// multiAndExec takes function 
   /// to complete CAS as Transaction
