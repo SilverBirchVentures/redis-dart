@@ -108,7 +108,7 @@ class RedisParser{
        return s.take_n(i) 
        .then((lst) {
          List<int> lst2 = new List<int>.from(lst);
-         takeCRLF(s,utf8.decode(lst2));
+         return takeCRLF(s,utf8.decode(lst2));
        }); //consume CRLF and return decoded list
       }
       else{
