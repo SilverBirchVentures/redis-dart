@@ -96,7 +96,7 @@ class RedisParser{
   static Future<int> parseInt(LazyStream s){
     return read_simple(s).then((v) {
       Iterable<int> vi = new List<int>.from(v);
-      _ParseIntRaw(vi);
+      return _ParseIntRaw(vi);
     });
   }
   
