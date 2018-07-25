@@ -123,7 +123,7 @@ class LazyStreamFast implements LazyStream {
     return n;
   }
   
-  Future<List> take_n_helper(int n){
+  Future<dynamic> take_n_helper(int n){
     int remains =  take_n_now(n);
     if(remains==0){
       var ret = new Future.value(_return);
