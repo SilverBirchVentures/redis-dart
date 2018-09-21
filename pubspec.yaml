@@ -3,3 +3,5 @@ version: 0.4.5
 author: Luka Rahne <luka.rahne@gmail.com>
 description: fast and simple redis-database client
 homepage: https://github.com/ra1u/redis-dart
+environment:
+  sdk: '>=2.0.0 <3.0.0'
